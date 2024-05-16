@@ -19,3 +19,4 @@ services:
 volumes:
   minio_data:
     driver: local
+# этот файл в браузере ничего не запускает
