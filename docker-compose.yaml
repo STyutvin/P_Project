@@ -100,6 +100,8 @@ services:
       retries: 5
       start_period: 5s
     restart: always
+    ports:
+      -'2:5432'
 
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
@@ -289,6 +291,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: post1234
+    ports:
+      -'3:5432'
 
   minio:
   image: 'bitnami/minio:latest'
@@ -299,5 +303,5 @@ services:
     - MINIO_ROOT_USER=user
     - MINIO_ROOT_PASSWORD=pass1234
 
-volumes:
-  postgres-db-volume:
+# volumes:
+#   postgres-db-volume:
